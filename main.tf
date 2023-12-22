@@ -47,8 +47,8 @@ resource "azurerm_subnet" "mtc-subnet" {
 }
 
 resource "azurerm_network_security_group" "mtc-sg" {
-  name = "mtc-sg"
-  location = azurerm_resource_group.mtc-rg.location
+  name                = "mtc-sg"
+  location            = azurerm_resource_group.mtc-rg.location
   resource_group_name = azurerm_resource_group.mtc-rg.name
 }
 
@@ -69,4 +69,34 @@ resource "azurerm_network_security_rule" "mtc-dev-rule" {
 resource "azurerm_subnet_network_security_group_association" "mtc-sga" {
   subnet_id                 = azurerm_subnet.mtc-subnet.id
   network_security_group_id = azurerm_network_security_group.mtc-sg.id
+}
+
+resource "azurerm_public_ip" "mtc-ip" {
+  # You might want to append some string to the name if you have a dynamic ip
+  name                = "mtc-ip"
+  resource_group_name = azurerm_resource_group.mtc-rg.name
+  location            = azurerm_resource_group.mtc-rg.location
+  #allocation_method   = "Static"
+  allocation_method = "Dynamic"
+
+  tags = {
+    environment = "dev"
+  }
+}
+
+resource "azurerm_network_interface" "mtc-nic" {
+  name     = "mtc-nic"
+  location = azurerm_resource_group.mtc-rg.location
+  resource_group_name = azurerm_resource_group.mtc-rg.name
+
+  ip_configuration {
+    name                          = "internal"
+    subnet_id                     = azurerm_subnet.mtc-subnet.id
+    private_ip_address_allocation = "Dynamic"
+    public_ip_address_id         = azurerm_public_ip.mtc-ip.id
+  }
+
+  tags = {
+    environment = "dev"
+  }
 }
