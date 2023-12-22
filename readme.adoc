@@ -1,0 +1,7 @@
+== Links
+- https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs[terraform docs]
+- https://www.youtube.com/watch?v=V53AHWun17s[terraform video]
+
+== TODO
+- [ ] Relearn how subnets work
+- [ ] Use Service Principal instead of azure CLI
