@@ -68,3 +68,7 @@ terraform apply -auto-approve
 == Links
 - https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs[terraform docs]
 - https://www.youtube.com/watch?v=V53AHWun17s[terraform video]
+
+- https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs[terraform azure registry]
+
+- https://www.youtube.com/watch?v=V53AHWun17s[video following along]
