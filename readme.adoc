@@ -39,6 +39,20 @@ see all of the state
 terraform show
 ----
 
+see what resources will be deleted if you ran terraform destroy
+
+----
+terraform plan -destroy
+----
+
+you can rename terraform.tfstate.backup to terraform.tfstate to revert to previous state
+
+apply without confirmation
+
+----
+terraform apply -auto-approve
+----
+
 == Notes
 
 - states should be stored remotely
