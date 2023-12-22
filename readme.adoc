@@ -1,7 +1,31 @@
-== Links
-- https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs[terraform docs]
-- https://www.youtube.com/watch?v=V53AHWun17s[terraform video]
+== Terraform commands
+
+initializes terraform
+
+----
+terraform init
+----
+
+formats terraform code
+
+----
+terraform fmt
+----
+
+
+----
+terraform plan
+----
+
+----
+terraform apply
+----
+
 
 == TODO
 - [ ] Relearn how subnets work
 - [ ] Use Service Principal instead of azure CLI
+
+== Links
+- https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs[terraform docs]
+- https://www.youtube.com/watch?v=V53AHWun17s[terraform video]
