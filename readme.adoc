@@ -21,6 +21,31 @@ terraform plan
 terraform apply
 ----
 
+see all resources
+
+----
+terraform state list
+----
+
+show specific resource
+
+----
+terraform state show azurerm_resource_group.mtc-rg
+----
+
+see all of the state
+
+----
+terraform show
+----
+
+== Notes
+
+- states should be stored remotely
+- There are very few circumstances to change state manually
+- every time the state is modified to created a backup
+
+
 
 == TODO
 - [ ] Relearn how subnets work
